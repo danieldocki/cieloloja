@@ -7,6 +7,11 @@ module Cielo
     def create!(parameters={})
       analysis_parameters(parameters)
       message = xml_builder("requisicao-transacao") do |xml|
+        xml.tag!("dados-portador") do
+          [:"numero-cartao", :validade, :indicador, :"codigo-seguranca"].each do |key|
+            xml.tag!(unless key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
+          end
+        end
         xml.tag!("dados-pedido") do
           [:numero, :valor, :moeda, :"data-hora", :idioma].each do |key|
             xml.tag!(key.to_s, parameters[key].to_s)

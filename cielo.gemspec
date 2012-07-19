@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "cielo"
-  s.version = "0.1.1"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Crafters Software Studio", "Rafael Felix", "Felipe Rodrigues"]
-  s.date = "2012-05-17"
+  s.authors = ["Giulliano Bueno", "Crafters Software Studio", "Rafael Felix", "Felipe Rodrigues"]
+  s.date = "2012-07-19"
   s.description = "Integra\u{e7}\u{e3}o com a cielo"
-  s.email = "crafters@crafters.com.br"
+  s.email = "giubueno@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
