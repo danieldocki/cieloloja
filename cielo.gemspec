@@ -4,11 +4,11 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "cielo"
-  s.version = "0.2.1"
+  s.name = "cielo-loja"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Giulliano Bueno", "Crafters Software Studio", "Rafael Felix", "Felipe Rodrigues"]
+  s.authors = ["Giulliano Bueno"]
   s.date = "2012-07-19"
   s.description = "Integra\u{e7}\u{e3}o com a cielo"
   s.email = "giubueno@gmail.com"
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
     "spec/cielo/transaction_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/crafters/cielo"
+  s.homepage = "http://github.com/giubueno/cielo"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"

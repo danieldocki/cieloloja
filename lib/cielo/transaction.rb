@@ -9,7 +9,7 @@ module Cielo
       message = xml_builder("requisicao-transacao") do |xml|
         xml.tag!("dados-portador") do
           [:"numero-cartao", :validade, :indicador, :"codigo-seguranca"].each do |key|
-            xml.tag!(unless key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
+            xml.tag!(if key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
           end
         end
         xml.tag!("dados-pedido") do
