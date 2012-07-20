@@ -2,7 +2,7 @@ module Cieloloja
   class Connection
     attr_reader :environment
     def initialize
-      @environment = eval(Cielo.environment.to_s.capitalize)
+      @environment = eval(Cieloloja.environment.to_s.capitalize)
       port = 443
       @http = Net::HTTP.new(@environment::BASE_URL,port)
       @http.use_ssl = true
