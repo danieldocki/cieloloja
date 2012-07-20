@@ -14,17 +14,17 @@ require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new
 
 require 'jeweler'
-require './lib/cielo/version.rb'
+require './lib/cieloloja/version.rb'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "cielo"
-  gem.homepage = "http://github.com/crafters/cielo"
+  gem.name = "cieloloja"
+  gem.homepage = "http://github.com/giubueno/cieloloja"
   gem.license = "MIT"
-  gem.summary = %Q{Integração com a cielo}
+  gem.summary = %Q{Integração com a cielo Buy Page Loja}
   gem.description = %Q{Integração com a cielo}
-  gem.email = "crafters@crafters.com.br"
-  gem.authors = ["Crafters Software Studio", "Rafael Felix", "Felipe Rodrigues"]
-  gem.version = Cielo::Version::STRING
+  gem.email = "giulliano@e-processamento.com"
+  gem.authors = ["TByte Consultoria", "Giulliano Bueno"]
+  gem.version = Cieloloja::Version::STRING
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "cielo #{version}"
+  rdoc.title = "cieloloja #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

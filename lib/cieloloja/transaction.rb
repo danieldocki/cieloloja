@@ -1,8 +1,8 @@
 #encoding: utf-8
-module Cielo
+module Cieloloja
   class Transaction
     def initialize
-      @connection = Cielo::Connection.new
+      @connection = Cieloloja::Connection.new
     end
     def create!(parameters={})
       analysis_parameters(parameters)
@@ -29,19 +29,19 @@ module Cielo
       make_request! message
     end
     
-    def verify!(cielo_tid)
-      return nil unless cielo_tid
+    def verify!(cieloloja_tid)
+      return nil unless cieloloja_tid
       message = xml_builder("requisicao-consulta", :before) do |xml|
-        xml.tid "#{cielo_tid}"
+        xml.tid "#{cieloloja_tid}"
       end
       
       make_request! message
     end
     
-    def catch!(cielo_tid)
-      return nil unless cielo_tid
+    def catch!(cieloloja_tid)
+      return nil unless cieloloja_tid
       message = xml_builder("requisicao-captura", :before) do |xml|
-        xml.tid "#{cielo_tid}"
+        xml.tid "#{cieloloja_tid}"
       end
       make_request! message
     end
@@ -49,7 +49,7 @@ module Cielo
     private
     def analysis_parameters(parameters={})
       [:numero, :valor, :bandeira, :"url-retorno"].each do |parameter|
-        raise Cielo::MissingArgumentError, "Required parameter #{parameter} not found" unless parameters[parameter]
+        raise Cieloloja::MissingArgumentError, "Required parameter #{parameter} not found" unless parameters[parameter]
       end
       parameters.merge!(:moeda => "986") unless parameters[:moeda]
       parameters.merge!(:"data-hora" => Time.now.strftime("%Y-%m-%dT%H:%M:%S")) unless parameters[:"data-hora"]
@@ -58,7 +58,7 @@ module Cielo
       parameters.merge!(:parcelas => "1") unless parameters[:parcelas]
       parameters.merge!(:autorizar => "2") unless parameters[:autorizar]
       parameters.merge!(:capturar => "true") unless parameters[:capturar]
-      parameters.merge!(:"url-retorno" => Cielo.return_path) unless parameters[:"url-retorno"]
+      parameters.merge!(:"url-retorno" => Cieloloja.return_path) unless parameters[:"url-retorno"]
       parameters
     end
     
@@ -68,8 +68,8 @@ module Cielo
       xml.tag!(group_name, :id => "#{Time.now.to_i}", :versao => "1.1.0") do
         block.call(xml) if target == :before
         xml.tag!("dados-ec") do
-          xml.numero Cielo.numero_afiliacao
-          xml.chave Cielo.chave_acesso
+          xml.numero Cieloloja.numero_afiliacao
+          xml.chave Cieloloja.chave_acesso
         end
         block.call(xml) if target == :after
       end

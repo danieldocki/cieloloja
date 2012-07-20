@@ -1,4 +1,4 @@
-module Cielo
+module Cieloloja
   class Connection
     attr_reader :environment
     def initialize

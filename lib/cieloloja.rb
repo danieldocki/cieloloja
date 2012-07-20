@@ -5,9 +5,9 @@ require 'active_support/core_ext/hash'
 require "net/http"
 require "rexml/document"
 require "builder"
-[:connection, :transaction].each { |lib| require "cielo/#{lib}" }
+[:connection, :transaction].each { |lib| require "cieloloja/#{lib}" }
 
-module Cielo
+module Cieloloja
 
   class Production
     BASE_URL = "ecommerce.cbmp.com.br"

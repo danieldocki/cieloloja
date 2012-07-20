@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Use esse arquivo para configurar a integração com a cielo.
-Cielo.setup do |config|
+Cieloloja.setup do |config|
   # Altere para production ao final dos seus testes
   # config.environment = :test
   
