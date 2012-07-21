@@ -1,2 +1,2 @@
-require 'cielo'
+require 'cieloloja'
 require 'fakeweb'
