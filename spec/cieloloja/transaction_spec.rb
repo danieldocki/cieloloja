@@ -82,6 +82,7 @@ describe Cieloloja::Transaction do
         config.environment = :production
         config.numero_afiliacao = "1001734891"
         config.chave_acesso="e84827130b9837473681c2787007da5914d6359947015a5cdb2b8843db0fa832"
+        ssl_verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
     end
     
