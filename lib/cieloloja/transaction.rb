@@ -7,9 +7,12 @@ module Cieloloja
     def create!(parameters={})
       analysis_parameters(parameters)
       message = xml_builder("requisicao-transacao") do |xml|
-        xml.tag!("dados-portador") do
-          [:"numero-cartao", :validade, :indicador, :"codigo-seguranca"].each do |key|
-            xml.tag!(if key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
+
+        if parameters[:"numero-cartao"] != nil
+          xml.tag!("dados-portador") do
+            [:"numero-cartao", :validade, :indicador, :"codigo-seguranca"].each do |key|
+              xml.tag!(if key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
+            end
           end
         end
         xml.tag!("dados-pedido") do
