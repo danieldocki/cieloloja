@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["TByte Consultoria", "Giulliano Bueno"]
-  s.date = "2012-07-20"
+  s.date = "2012-07-21"
   s.description = "Integra\u{e7}\u{e3}o com a cielo"
   s.email = "giulliano@e-processamento.com"
   s.extra_rdoc_files = [
@@ -30,8 +30,8 @@ Gem::Specification.new do |s|
     "lib/cieloloja/version.rb",
     "lib/generators/cielo/install_generator.rb",
     "lib/generators/templates/cieloloja.rb",
-    "spec/cielo/connection_spec.rb",
-    "spec/cielo/transaction_spec.rb",
+    "spec/cieloloja/connection_spec.rb",
+    "spec/cieloloja/transaction_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/giubueno/cieloloja"
