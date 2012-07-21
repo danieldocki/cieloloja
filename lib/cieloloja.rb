@@ -12,11 +12,13 @@ module Cieloloja
   class Production
     BASE_URL = "ecommerce.cbmp.com.br"
     WS_PATH = "/servicos/ecommwsec.do"
+    ssl_verify_mode = OpenSSL::SSL::VERIFY_NONE
   end
 
   class Test
     BASE_URL = "qasecommerce.cielo.com.br"
     WS_PATH = "/servicos/ecommwsec.do"
+    ssl_verify_mode = OpenSSL::SSL::VERIFY_NONE
   end
   
   @@environment = :test
