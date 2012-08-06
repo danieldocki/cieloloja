@@ -7,7 +7,7 @@ module Cieloloja
       @http = Net::HTTP.new(@environment::BASE_URL,port)
       @http.use_ssl = true
       @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      @http.ca_file = '/usr/local/share/curl/curl-ca-bundle.crt' if File.exists?('/usr/local/share/curlcurl-ca-bundle.crt') # Mac OS X  
+      @http.ca_file = '/usr/local/share/curl/curl-ca-bundle.crt' if File.exists?('/usr/local/share/curl/curl-ca-bundle.crt') # Mac OS X  
       # @http.ca_path = '/etc/ssl/certs' if File.exists?('/etc/ssl/certs') # Ubuntu
     
       
