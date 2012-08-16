@@ -10,7 +10,7 @@ module Cieloloja
 
         if parameters[:"numero-cartao"] != nil
           xml.tag!("dados-portador") do
-            [:"numero-cartao", :validade, :indicador, :"codigo-seguranca"].each do |key|
+            [:"numero-cartao", :validade, :indicador, :"codigo-seguranca", :"nome-portador"].each do |key|
               xml.tag!(if key == :"numero-cartao" then "numero" else key.to_s end, parameters[key].to_s)
             end
           end
