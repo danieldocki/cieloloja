@@ -21,8 +21,7 @@ module Cieloloja
         str_params+="&" unless str_params.empty?
         str_params+="#{key}=#{value}"
       end
-      
-      Rails.logger.info "Enviando XML para Cielo: #{str_params}"
+
       @http.request_post(self.environment::WS_PATH, str_params)
     end
   end
